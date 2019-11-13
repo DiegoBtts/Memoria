@@ -49,9 +49,9 @@ namespace Memoria.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Nombre de usuario")]
+        [StringLength (40,MinimumLength =4,ErrorMessage ="El nombre de usuario debe de contener 4 caracteres.")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -65,9 +65,20 @@ namespace Memoria.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Nombre Completo")]
+        [StringLength(50,MinimumLength =5,ErrorMessage ="El nombre completo es requerido")]
+        [DataType(DataType.Text)]
+        public string NombreCompleto { get; set; }
+
+        [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre de usuario")]
+        [StringLength(40, MinimumLength = 4, ErrorMessage = "El nombre de usuario es requerido.")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "El número de caracteres de {0} debe ser al menos {2}.", MinimumLength = 6)]
