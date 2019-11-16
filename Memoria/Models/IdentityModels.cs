@@ -17,6 +17,9 @@ namespace Memoria.Models
         {
             // Tenga en cuenta que el valor de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            userIdentity.AddClaim(new Claim("Nombre",this.Nombre));
+            userIdentity.AddClaim(new Claim("ApellidoPaterno", this.ApellidoPaterno));
+            userIdentity.AddClaim(new Claim("ApellidoMaterno", this.ApellidoMaterno));
             // Agregar aquí notificaciones personalizadas de usuario
             return userIdentity;
         }
