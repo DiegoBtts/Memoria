@@ -49,9 +49,9 @@ namespace Memoria.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Correo electrónico")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Nombre de Usuario")]
+        [StringLength(50,MinimumLength =3,ErrorMessage ="El nombre de usuario debe de contener minimo 3 caracteres.")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -64,6 +64,26 @@ namespace Memoria.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "Nombre")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre debe de contener minimo 3 caracteres.")]
+        public string Nombre { get; set; }
+
+        [Required]
+        [Display(Name = "Apellido Paterno")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El apellido paterno debe de contener minimo 3 caracteres.")]
+        public string ApellidoPaterno { get; set; }
+
+        [Required]
+        [Display(Name = "Apellido Materno")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El apellido materno debe de contener minimo 3 caracteres.")]
+        public string ApellidoMaterno { get; set; }
+
+        [Required]
+        [Display(Name = "Nombre de Usuario")]
+        [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre de usuario debe de contener minimo 3 caracteres.")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]

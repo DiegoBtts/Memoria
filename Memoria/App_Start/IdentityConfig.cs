@@ -16,6 +16,8 @@ namespace Memoria
 {
     public class EmailService : IIdentityMessageService
     {
+        
+
         public Task SendAsync(IdentityMessage message)
         {
             // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
