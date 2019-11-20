@@ -11,17 +11,40 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Memoria.Models;
+using System.Net.Mail;
+
 
 namespace Memoria
 {
     public class EmailService : IIdentityMessageService
     {
-        
+        Remitente remitente = new Remitente();
 
         public Task SendAsync(IdentityMessage message)
         {
-            // Conecte su servicio de correo electrónico aquí para enviar correo electrónico.
-            return Task.FromResult(0);
+            SmtpClient client = new SmtpClient("smtp-mail.outlook.com");
+            client.Port = 587;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential(remitente.Email, remitente.Contraseña);
+
+            client.EnableSsl = true;
+            client.Credentials = credentials;
+
+            try
+            {
+                var mail = new MailMessage(remitente.Email.Trim(), message.Destination.Trim());
+                mail.Subject = message.Subject;
+                mail.Body = message.Body;
+                client.Send(mail);
+                return Task.FromResult(0);
+            }
+            catch (Exception x)
+            {
+                Console.WriteLine(x.Message);
+                throw;
+            }
+
         }
     }
 
