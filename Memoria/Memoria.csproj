@@ -171,6 +171,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -182,10 +183,19 @@
     <Compile Include="Migrations\201911160018369_DataFullName.Designer.cs">
       <DependentUpon>201911160018369_DataFullName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911210130184_role.cs" />
+    <Compile Include="Migrations\201911210130184_role.Designer.cs">
+      <DependentUpon>201911210130184_role.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911210209224_role1.cs" />
+    <Compile Include="Migrations\201911210209224_role1.Designer.cs">
+      <DependentUpon>201911210209224_role1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\RoleViewModel.cs" />
     <Compile Include="Models\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,6 +260,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -279,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911160018369_DataFullName.resx">
       <DependentUpon>201911160018369_DataFullName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911210130184_role.resx">
+      <DependentUpon>201911210130184_role.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911210209224_role1.resx">
+      <DependentUpon>201911210209224_role1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

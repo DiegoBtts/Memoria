@@ -24,6 +24,12 @@ namespace Memoria.Models
             return userIdentity;
         }
     }
+    //agregado para activar los roles
+    public class ApplicationRole: IdentityRole
+    {
+        public ApplicationRole() : base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
+    }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -36,5 +42,7 @@ namespace Memoria.Models
         {
             return new ApplicationDbContext();
         }
+
+      //  public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
