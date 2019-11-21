@@ -155,7 +155,14 @@ namespace Memoria.Controllers
         {
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)
+            {
+               if(role.Name != "Admin")
+               {
                 list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+               }
+                
+            }
+               
             ViewBag.Roles = list;
             return View();
         }

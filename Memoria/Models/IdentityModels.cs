@@ -43,6 +43,8 @@ namespace Memoria.Models
             return new ApplicationDbContext();
         }
 
-      //  public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
+        public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        //  public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
