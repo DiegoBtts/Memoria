@@ -150,14 +150,16 @@ namespace Memoria.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+       [AllowAnonymous]
+       
         public ActionResult Register()
         {
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)
             {
-               if(role.Name != "Admin")
-               {
+               
+               if(role.Name != "Administrador")
+               { 
                 list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
                }
                 

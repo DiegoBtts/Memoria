@@ -191,10 +191,6 @@
     <Compile Include="Migrations\201911210209224_role1.Designer.cs">
       <DependentUpon>201911210209224_role1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911211433087_DeleteRole.cs" />
-    <Compile Include="Migrations\201911211433087_DeleteRole.Designer.cs">
-      <DependentUpon>201911211433087_DeleteRole.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -269,7 +265,6 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
-    <Content Include="Views\Role\DeleteConfirmed.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -305,9 +300,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911210209224_role1.resx">
       <DependentUpon>201911210209224_role1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911211433087_DeleteRole.resx">
-      <DependentUpon>201911211433087_DeleteRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
