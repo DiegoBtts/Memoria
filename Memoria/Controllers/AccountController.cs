@@ -37,9 +37,9 @@ namespace Memoria.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -134,7 +134,7 @@ namespace Memoria.Controllers
             // Si un usuario introduce códigos incorrectos durante un intervalo especificado de tiempo, la cuenta del usuario 
             // se bloqueará durante un período de tiempo especificado. 
             // Puede configurar el bloqueo de la cuenta en IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent: model.RememberMe, rememberBrowser: model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -150,8 +150,8 @@ namespace Memoria.Controllers
 
         //
         // GET: /Account/Register
-       [AllowAnonymous]
-       
+    [AllowAnonymous]
+        //  [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -172,7 +172,6 @@ namespace Memoria.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -191,7 +190,7 @@ namespace Memoria.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("User Admin", "Index");
                 }
                 AddErrors(result);
             }
@@ -431,7 +430,8 @@ namespace Memoria.Controllers
         {
             return View();
         }
-
+        //
+     
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -451,6 +451,8 @@ namespace Memoria.Controllers
 
             base.Dispose(disposing);
         }
+
+       
 
         #region Asistentes
         // Se usa para la protección XSRF al agregar inicios de sesión externos

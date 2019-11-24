@@ -172,6 +172,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,11 +192,28 @@
     <Compile Include="Migrations\201911210209224_role1.Designer.cs">
       <DependentUpon>201911210209224_role1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911230305073_DataFullName1.cs" />
+    <Compile Include="Migrations\201911230305073_DataFullName1.Designer.cs">
+      <DependentUpon>201911230305073_DataFullName1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230604478_newmigrations.cs" />
+    <Compile Include="Migrations\201911230604478_newmigrations.Designer.cs">
+      <DependentUpon>201911230604478_newmigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230634244_newmigrations1.cs" />
+    <Compile Include="Migrations\201911230634244_newmigrations1.Designer.cs">
+      <DependentUpon>201911230634244_newmigrations1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911230706507_newmigrations2.cs" />
+    <Compile Include="Migrations\201911230706507_newmigrations2.Designer.cs">
+      <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Models\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +283,11 @@
     <Content Include="Views\Role\Edit.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -300,6 +323,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911210209224_role1.resx">
       <DependentUpon>201911210209224_role1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230305073_DataFullName1.resx">
+      <DependentUpon>201911230305073_DataFullName1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230604478_newmigrations.resx">
+      <DependentUpon>201911230604478_newmigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230634244_newmigrations1.resx">
+      <DependentUpon>201911230634244_newmigrations1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911230706507_newmigrations2.resx">
+      <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

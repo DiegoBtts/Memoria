@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Memoria.Models
@@ -79,6 +81,12 @@ namespace Memoria.Models
         [StringLength(50, MinimumLength = 3, ErrorMessage = "El apellido materno debe de contener minimo 3 caracteres.")]
         public string ApellidoMaterno { get; set; }
 
+        [Required(ErrorMessage = " fecha de nacimiento es requerido")]
+        [DisplayName("Fecha de Nacimiento")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
+        [DataType(DataType.Date)]
+        public DateTime FechaNacimiento { get; set; }
+
         [Required]
         [Display(Name = "Nombre de Usuario")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "El nombre de usuario debe de contener minimo 3 caracteres.")]
@@ -100,6 +108,8 @@ namespace Memoria.Models
         [Compare("Password", ErrorMessage = "La contraseña y la contraseña de confirmación no coinciden.")]
         public string ConfirmPassword { get; set; }
 
+
+        [Display(Name = "Tipo de Usuario")]
         public string RoleName { get; set; }
     }
 
