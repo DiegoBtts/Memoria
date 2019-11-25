@@ -36,7 +36,7 @@ namespace Memoria.Controllers
             }
         }
         // GET: Role
-       [Authorize(Roles = "Admin")]
+       [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             List<RoleViewModel> list = new List<RoleViewModel>();
@@ -47,7 +47,7 @@ namespace Memoria.Controllers
             }
             return View(list);
         }
-        [Authorize (Roles ="Admin")]
+        [Authorize (Roles ="Administrador")]
         public ActionResult Create()
         {
             return View();
@@ -59,7 +59,7 @@ namespace Memoria.Controllers
             await RoleManager.CreateAsync(role);
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Edit(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
@@ -73,7 +73,7 @@ namespace Memoria.Controllers
             await RoleManager.UpdateAsync(role);
             return RedirectToAction("Index");
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Details (string id)
         {
             var role = await RoleManager.FindByIdAsync(id);
@@ -82,7 +82,7 @@ namespace Memoria.Controllers
 
 
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Delete(string id)
         {
             var role = await RoleManager.FindByIdAsync(id);

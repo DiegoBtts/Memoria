@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201911230706507_newmigrations2.Designer.cs">
       <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911250125595_HaberQueRollo.cs" />
+    <Compile Include="Migrations\201911250125595_HaberQueRollo.Designer.cs">
+      <DependentUpon>201911250125595_HaberQueRollo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -335,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911230706507_newmigrations2.resx">
       <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911250125595_HaberQueRollo.resx">
+      <DependentUpon>201911250125595_HaberQueRollo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

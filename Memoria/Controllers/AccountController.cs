@@ -150,7 +150,9 @@ namespace Memoria.Controllers
 
         //
         // GET: /Account/Register
-    [AllowAnonymous]
+    
+        [AllowAnonymous]
+        //[ValidateAntiForgeryToken]
         //  [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
@@ -172,7 +174,7 @@ namespace Memoria.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [ValidateAntiForgeryToken]
+       [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -190,7 +192,7 @@ namespace Memoria.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirmar cuenta", "Para confirmar la cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
 
-                    return RedirectToAction("User Admin", "Index");
+                    return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
             }

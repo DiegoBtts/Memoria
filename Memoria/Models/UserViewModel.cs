@@ -20,9 +20,10 @@ namespace Memoria.Models
             ApellidoPaterno = user.ApellidoPaterno;
             ApellidoMaterno = user.ApellidoMaterno;
             Email = user.Email;
-            Edad =  user.FechaNacimiento.Year-DateTime.Now.Year;
             FechaNacimiento = user.FechaNacimiento;
             Edad = DateTime.Today.Year - user.FechaNacimiento.Year;
+            RoleName = new RoleViewModel().Name;
+
             
 
         //    Role = new ApplicationUserManager(user.Roles);
