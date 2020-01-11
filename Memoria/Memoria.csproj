@@ -176,43 +176,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911141814385_InitialCreate.cs" />
-    <Compile Include="Migrations\201911141814385_InitialCreate.Designer.cs">
-      <DependentUpon>201911141814385_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911160018369_DataFullName.cs" />
-    <Compile Include="Migrations\201911160018369_DataFullName.Designer.cs">
-      <DependentUpon>201911160018369_DataFullName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911210130184_role.cs" />
-    <Compile Include="Migrations\201911210130184_role.Designer.cs">
-      <DependentUpon>201911210130184_role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911210209224_role1.cs" />
-    <Compile Include="Migrations\201911210209224_role1.Designer.cs">
-      <DependentUpon>201911210209224_role1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911230305073_DataFullName1.cs" />
-    <Compile Include="Migrations\201911230305073_DataFullName1.Designer.cs">
-      <DependentUpon>201911230305073_DataFullName1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911230604478_newmigrations.cs" />
-    <Compile Include="Migrations\201911230604478_newmigrations.Designer.cs">
-      <DependentUpon>201911230604478_newmigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911230634244_newmigrations1.cs" />
-    <Compile Include="Migrations\201911230634244_newmigrations1.Designer.cs">
-      <DependentUpon>201911230634244_newmigrations1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911230706507_newmigrations2.cs" />
-    <Compile Include="Migrations\201911230706507_newmigrations2.Designer.cs">
-      <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201911250125595_HaberQueRollo.cs" />
-    <Compile Include="Migrations\201911250125595_HaberQueRollo.Designer.cs">
-      <DependentUpon>201911250125595_HaberQueRollo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -314,35 +277,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911141814385_InitialCreate.resx">
-      <DependentUpon>201911141814385_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911160018369_DataFullName.resx">
-      <DependentUpon>201911160018369_DataFullName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911210130184_role.resx">
-      <DependentUpon>201911210130184_role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911210209224_role1.resx">
-      <DependentUpon>201911210209224_role1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911230305073_DataFullName1.resx">
-      <DependentUpon>201911230305073_DataFullName1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911230604478_newmigrations.resx">
-      <DependentUpon>201911230604478_newmigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911230634244_newmigrations1.resx">
-      <DependentUpon>201911230634244_newmigrations1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911230706507_newmigrations2.resx">
-      <DependentUpon>201911230706507_newmigrations2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911250125595_HaberQueRollo.resx">
-      <DependentUpon>201911250125595_HaberQueRollo.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

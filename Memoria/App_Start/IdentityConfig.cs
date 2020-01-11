@@ -140,4 +140,7 @@ namespace Memoria
             return applicationRoleManager;
         }
     }
+    
+   
+
 }

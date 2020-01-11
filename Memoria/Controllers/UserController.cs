@@ -66,21 +66,30 @@ namespace Memoria.Controllers
         }
         //private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Role
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
+
             List<UserViewModel> list = new List<UserViewModel>();
+            List<RoleViewModel> RoleList = new List<RoleViewModel>();
+             foreach(var role in RoleManager.Roles)
+            {
+                RoleList.Add(new RoleViewModel(role));
+            }
             foreach (var user in UserManager.Users)
             {
-                if(user.UserName != "YanitzaMungarro")
-                list.Add(new UserViewModel(user));
+                if(user.UserName != "yanitza123")
+                {
+                    list.Add(new UserViewModel(user));
+                }
+                
 
             }
           
             
             return View(list);
         }
-        [Authorize(Roles = "Administrador")]
+       // [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -114,7 +123,7 @@ namespace Memoria.Controllers
             }
             
         }
-        [Authorize(Roles = "Administrador")]
+      //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Edit(string id)
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -151,7 +160,7 @@ namespace Memoria.Controllers
             }
 
         }
-        [Authorize(Roles = "Administrador")]
+      //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Details(string id)
         {
             var user = await UserManager.FindByIdAsync(id);
@@ -160,7 +169,7 @@ namespace Memoria.Controllers
 
 
 
-        [Authorize(Roles = "Administrador")]
+      //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Delete(string id)
         {
             var user = await UserManager.FindByIdAsync(id);

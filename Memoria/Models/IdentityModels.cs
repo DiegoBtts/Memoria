@@ -54,8 +54,7 @@ namespace Memoria.Models
         public ApplicationRole() : base() { }
         public ApplicationRole(string roleName) : base(roleName) { }
     }
-   
-    
+
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

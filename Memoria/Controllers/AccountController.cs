@@ -156,18 +156,6 @@ namespace Memoria.Controllers
         //  [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
-            List<SelectListItem> list = new List<SelectListItem>();
-            foreach (var role in RoleManager.Roles)
-            {
-               
-               if(role.Name != "Administrador")
-               { 
-                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
-               }
-                
-            }
-               
-            ViewBag.Roles = list;
             return View();
         }
 
@@ -183,7 +171,7 @@ namespace Memoria.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
+                   // result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
