@@ -55,7 +55,11 @@ namespace Memoria.Models
         public ApplicationRole(string roleName) : base(roleName) { }
     }
 
+    public class ApplicationUserRole: IdentityUserRole
+    {
+        public ApplicationUserRole() : base() { }
 
+    }
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -68,9 +72,13 @@ namespace Memoria.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
+       // public System.Data.Entity.DbSet<MemoryViewModels.Models.Memoria> Memorias { get; set; }
 
-        public System.Data.Entity.DbSet<Memoria.Models.UserViewModel> UserViewModels { get; set; }
+
+
+        // public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        // public System.Data.Entity.DbSet<Memoria.Models.UserViewModel> UserViewModels { get; set; }
 
         //  public System.Data.Entity.DbSet<Memoria.Models.RoleViewModel> RoleViewModels { get; set; }
     }

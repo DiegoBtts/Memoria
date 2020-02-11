@@ -22,7 +22,7 @@ namespace Memoria.Models
             Email = user.Email;
             FechaNacimiento = user.FechaNacimiento;
             Edad = DateTime.Today.Year - user.FechaNacimiento.Year;
-            RoleName = new RoleViewModel().Name;
+            RoleName = "";
 
             
 

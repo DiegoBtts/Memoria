@@ -109,6 +109,8 @@ namespace Memoria
             }
             return ApplicationUsermanager;
         }
+
+     
     }
 
     // Configure el administrador de inicios de sesión que se usa en esta aplicación.
@@ -140,7 +142,7 @@ namespace Memoria
             return applicationRoleManager;
         }
     }
+
     
-   
 
 }

@@ -1,9 +1,5 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -11,10 +7,13 @@ using Memoria.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 
+
 namespace Memoria.Controllers
 {
+    
     public class UserController : Controller
     {
+       
         private ApplicationUserManager _userManager;
         private ApplicationRoleManager _roleManager;
         private ApplicationSignInManager _signInManager;
@@ -69,36 +68,35 @@ namespace Memoria.Controllers
         //[Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
-
+            
             List<UserViewModel> list = new List<UserViewModel>();
-            List<RoleViewModel> RoleList = new List<RoleViewModel>();
-             foreach(var role in RoleManager.Roles)
-            {
-                RoleList.Add(new RoleViewModel(role));
-            }
+            
             foreach (var user in UserManager.Users)
             {
-                if(user.UserName != "yanitza123")
+                if (user.UserName != "yanitza123")
                 {
+                    
                     list.Add(new UserViewModel(user));
                 }
-                
+
 
             }
-          
-            
+
+
             return View(list);
         }
-       // [Authorize(Roles = "Administrador")]
+        // [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<SelectListItem> list = new List<SelectListItem>();
+
             foreach (var role in RoleManager.Roles)
             {
 
                 if (role.Name != "Administrador")
                 {
                     list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+
                 }
 
             }
@@ -113,17 +111,18 @@ namespace Memoria.Controllers
             var result = await UserManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
+                
                 result = await UserManager.AddToRoleAsync(user.Id, model.RoleName);
-               return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
             else
             {
                 AddErrors(result);
                 return View(model);
             }
-            
+
         }
-      //  [Authorize(Roles = "Administrador")]
+        //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Edit(string id)
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -147,12 +146,12 @@ namespace Memoria.Controllers
         public async Task<ActionResult> Edit(UserViewModel model)
         {
             var user = new ApplicationUser() { Nombre = model.Nombre, ApellidoPaterno = model.ApellidoPaterno, ApellidoMaterno = model.ApellidoMaterno, UserName = model.UserName, Email = model.Email, FechaNacimiento = model.FechaNacimiento };
-           var result =  await UserManager.UpdateAsync(user);
+            var result = await UserManager.UpdateAsync(user);
             if (result.Succeeded)
             {
                 await UserManager.AddToRoleAsync(user.Id, model.RoleName);
                 return RedirectToAction("Index");
-                
+
             }
             {
                 AddErrors(result);
@@ -160,7 +159,7 @@ namespace Memoria.Controllers
             }
 
         }
-      //  [Authorize(Roles = "Administrador")]
+        //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Details(string id)
         {
             var user = await UserManager.FindByIdAsync(id);
@@ -169,7 +168,7 @@ namespace Memoria.Controllers
 
 
 
-      //  [Authorize(Roles = "Administrador")]
+        //  [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Delete(string id)
         {
             var user = await UserManager.FindByIdAsync(id);
@@ -179,7 +178,7 @@ namespace Memoria.Controllers
         [HttpPost]
         public async Task<ActionResult> Delete(UserViewModel model)
         {
-            var user = new ApplicationUser() { Id = model.Id,Nombre = model.Nombre, ApellidoPaterno = model.ApellidoPaterno, ApellidoMaterno = model.ApellidoMaterno};
+            var user = new ApplicationUser() { Id = model.Id, Nombre = model.Nombre, ApellidoPaterno = model.ApellidoPaterno, ApellidoMaterno = model.ApellidoMaterno };
             var users = await UserManager.FindByIdAsync(user.Id);
             await UserManager.DeleteAsync(users);
             return RedirectToAction("Index");
@@ -194,5 +193,4 @@ namespace Memoria.Controllers
         }
 
     }
-
 }

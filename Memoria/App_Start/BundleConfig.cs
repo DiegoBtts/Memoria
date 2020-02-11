@@ -20,11 +20,20 @@ namespace Memoria
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                     "~/Content/vendor/jquery/jquery.min.js",
+                     "~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js",
+                     "~/Content/vendor/jquery-easing/jquery.easing.min.js",
+                     "~/Content/js/sb-admin-2.min.js",
+                     "~/Content/vendor/chart.js/Chart.min.js",
+                     "~/Content/js/demo/chart-area-demo.js",
+                     "~/Content/js/demo/chart-pie-demo.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+               bundles.Add(new StyleBundle("~/Content/css").Include(
+             "~/Content/vendor/fontawesome-free/css/all.min.css",
+             "~/Content/css/sb-admin-2.min.css")); 
+
+
+
         }
     }
 }
