@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<Memoria.Models.UserViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Administrador de usuarios";
 }
 
-<h2>Index</h2>
+<h2>Administrador de usuarios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create") 
+    @Html.ActionLink("Registrar Usuario", "Create") 
 </p>
 <p> @Html.ActionLink("Agregar roles", "Index", "Role")</p>
 <table class="table">
@@ -34,9 +34,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Edad)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoleName)
-        </th>
+        
     </tr>
 
 @foreach (var item in Model) {
@@ -62,14 +60,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Edad)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoleName)
-        </td>
+        
 
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

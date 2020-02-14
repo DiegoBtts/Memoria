@@ -65,7 +65,7 @@ namespace Memoria.Controllers
         }
         //private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Role
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             
@@ -73,10 +73,11 @@ namespace Memoria.Controllers
             
             foreach (var user in UserManager.Users)
             {
-                if (user.UserName != "yanitza123")
+                if (!User.IsInRole("Administrador")&& User.IsInRole("Maestro"))
                 {
                     
                     list.Add(new UserViewModel(user));
+
                 }
 
 
@@ -85,7 +86,7 @@ namespace Memoria.Controllers
 
             return View(list);
         }
-        // [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -122,7 +123,7 @@ namespace Memoria.Controllers
             }
 
         }
-        //  [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Edit(string id)
         {
             List<SelectListItem> list = new List<SelectListItem>();
@@ -159,7 +160,7 @@ namespace Memoria.Controllers
             }
 
         }
-        //  [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Details(string id)
         {
             var user = await UserManager.FindByIdAsync(id);
@@ -168,7 +169,7 @@ namespace Memoria.Controllers
 
 
 
-        //  [Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         public async Task<ActionResult> Delete(string id)
         {
             var user = await UserManager.FindByIdAsync(id);

@@ -19,16 +19,17 @@
             <div id="content">
                 @Html.Partial("TopBar")
                 <div class="container-fluid">
-                   
+
                     @RenderBody()
                 </div>
                 <footer>
                     <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
                 </footer>
-                
+
                 <hr />
 
             </div>
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
