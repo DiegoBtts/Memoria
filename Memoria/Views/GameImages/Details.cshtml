@@ -1,0 +1,114 @@
+﻿@model Memoria.Models.GameImage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>GameImage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Portada)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Portada)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image0)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image0)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image6)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image6)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image7)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image7)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image8)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image8)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image9)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image9)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdImage }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
