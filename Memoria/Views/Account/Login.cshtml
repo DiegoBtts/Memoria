@@ -83,11 +83,9 @@
                                         <div class="text-center">
                                             @Html.ActionLink("¿Ha olvidado su contraseña?", "ForgotPassword")
                                         </div>
-                                        <div class="text-center">
-                                            @Html.ActionLink("Registrarse", "Register")
-                                        </div>
+
                                     }
-                                </div>       
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -100,11 +98,15 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    @Scripts.Render("~/Content/vendor/jquery/jquery.min.js");
-    @Scripts.Render("~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js");
-    @Scripts.Render("~/Content/vendor/jquery-easing/jquery.easing.min.js");
-    @Scripts.Render("~/Content/js/sb-admin-2.min.js");
 
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("~/Content/vendor/jquery/jquery.min.js");
+        @Scripts.Render("~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js");
+        @Scripts.Render("~/Content/vendor/jquery-easing/jquery.easing.min.js");
+        @Scripts.Render("~/Content/js/sb-admin-2.min.js");
+    }
 </body>
 
 </html>
