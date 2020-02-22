@@ -11,7 +11,7 @@ namespace Memoria.Models
     {
         [Key]
         public int IdImage { get; set; }
-        [DisplayName("Nombre Del Juego")]
+        [DisplayName("Nombre del Juego")]
         public string Name { get; set; }
         public byte[] Portada { get; set; }
         [DisplayName("Imagen 1")]
