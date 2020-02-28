@@ -99,7 +99,8 @@ function iniciarJuego(){
   
    function winGame(){
        if(aciertos==(cards.length/2)){
-           alert("Felicidades haz ganado")
+           //alert("Felicidades haz ganado")
+           messg();
           parar();
        }
    }
@@ -167,6 +168,21 @@ function btnFrutas(){
   cont = 0;
   aciertos =0;
   console.log(cont);
+}
+function messg() {
+    console.log("hOLA")
+    Swal.fire({
+        title: 'Custom width, padding, background.',
+        width: 600,
+        padding: '3em',
+        background: '#fff url(C:\Users\die-l\source\repos\Memoria\Memoria\Icons\trees.png)',
+        backdrop: `
+    rgba(0,0,123,0.4)
+    url("C:\Users\die-l\source\repos\Memoria\Memoria\Icons\nyan-cat.gif")
+    left top
+    no-repeat
+  `
+    })
 }
 
  

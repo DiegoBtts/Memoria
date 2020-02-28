@@ -244,7 +244,6 @@ namespace Memoria.Controllers
         {
            
             return RedirectToAction("Index");
-            return File(memoryStream, "image/png");
         }
     }
 }
