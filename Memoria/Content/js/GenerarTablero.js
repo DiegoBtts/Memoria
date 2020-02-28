@@ -160,13 +160,13 @@ function play(name) {
 function messg() {
     console.log("hOLA")
     Swal.fire({
-        title: 'Custom width, padding, background.',
+        title: 'Haz Ganado.',
         width: 600,
         padding: '3em',
-        background: '#fff url(C:\Users\die-l\source\repos\Memoria\Memoria\Icons\trees.png)',
+        background: '#fff url("/Icons/trees.png")',
         backdrop: `
     rgba(0,0,123,0.4)
-    url("C:\Users\die-l\source\repos\Memoria\Memoria\Icons\nyan-cat.gif")
+    url("/Icons/nyan-cat.gif")
     left top
     no-repeat
   `
