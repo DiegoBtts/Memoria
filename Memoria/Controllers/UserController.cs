@@ -65,13 +65,13 @@ namespace Memoria.Controllers
         }
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Role
-      // [Authorize(Roles = "Administrador")]
+       [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             
             List<UserViewModel> list = new List<UserViewModel>();
             
-           /* foreach (var user in UserManager.Users)
+            foreach (var user in UserManager.Users)
             {
                 if (!User.IsInRole("Administrador")&& User.IsInRole("Maestro"))
                 {
@@ -81,17 +81,17 @@ namespace Memoria.Controllers
                 }
 
 
-            }*/
+            }
 
 
             return View(list);
         }
-      //  [Authorize(Roles = "Administrador")]
+      [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<SelectListItem> list = new List<SelectListItem>();
 
-           /* foreach (var role in RoleManager.Roles)
+            foreach (var role in RoleManager.Roles)
             {
 
                 if (role.Name != "Administrador")
@@ -100,7 +100,7 @@ namespace Memoria.Controllers
 
                 }
 
-            }*/
+            }
 
             ViewBag.Roles = list;
             return View();
