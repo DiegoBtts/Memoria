@@ -218,9 +218,9 @@ namespace Memoria.Controllers
             MemoryStream memoryStream = new MemoryStream(byteImage);
             Image image = Image.FromStream(memoryStream);
             memoryStream = new MemoryStream();
-            image.Save(memoryStream, ImageFormat.Jpeg);
+            image.Save(memoryStream, ImageFormat.Png);
             memoryStream.Position = 0;
-            return File(memoryStream, "image/jpg");
+            return File(memoryStream, "image/png");
         }
     }
 }
