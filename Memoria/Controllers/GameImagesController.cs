@@ -222,5 +222,29 @@ namespace Memoria.Controllers
             memoryStream.Position = 0;
             return File(memoryStream, "image/png");
         }
+        public ActionResult PlayMemoryGame(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            GameImage gameImage = db.GameImages.Find(id);
+            if (gameImage == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(gameImage);
+        }
+
+        // POST: GameImages/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PlayMemoryGame(int id)
+        {
+           
+            return RedirectToAction("Index");
+            return File(memoryStream, "image/png");
+        }
     }
 }
