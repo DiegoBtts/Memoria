@@ -16,15 +16,16 @@
     @foreach (var item in Model)
     {
         <div class="col-sm-3">
-            <div class="card" style="width: 18rem;background-color:darkslategray">
+            <div class="card text-center" style="width: 18rem;background-color:azure">
                 <img class="card-img-top" data-src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" data-holder-rendered="true" style="height: 150px; width: 100%; display: block;">
                 <div class="card-body">
                     <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
 
                 </div>
 
-                <div class="card-body">
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdImage }) |
+                <div class="card-body text-left">
+                   
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdImage, @class="btn btn-primary"}) |
                     @Html.ActionLink("Jugar", "PlayMemoryGame", new { id = item.IdImage })
 
                 </div>
