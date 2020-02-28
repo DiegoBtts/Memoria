@@ -72,7 +72,9 @@ namespace Memoria.Models
             return new ApplicationDbContext();
         }
 
-       // public System.Data.Entity.DbSet<MemoryViewModels.Models.Memoria> Memorias { get; set; }
+        public System.Data.Entity.DbSet<Memoria.Models.GameImage> GameImages { get; set; }
+
+        // public System.Data.Entity.DbSet<MemoryViewModels.Models.Memoria> Memorias { get; set; }
 
 
 

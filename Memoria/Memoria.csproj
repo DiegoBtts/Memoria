@@ -198,15 +198,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\estilos.css" />
     <Content Include="Content\css\sb-admin-2.css" />
     <Content Include="Content\css\sb-admin-2.min.css" />
+    <Content Include="Content\css\style.css" />
     <Content Include="Content\img\undraw_posting_photo.svg" />
-    <Content Include="Content\js\demo\chart-area-demo.js" />
-    <Content Include="Content\js\demo\chart-bar-demo.js" />
-    <Content Include="Content\js\demo\chart-pie-demo.js" />
-    <Content Include="Content\js\demo\datatables-demo.js" />
+    <Content Include="Content\js\cronometro.js" />
+    <Content Include="Content\js\GenerarTablero.js" />
     <Content Include="Content\js\sb-admin-2.js" />
     <Content Include="Content\js\sb-admin-2.min.js" />
+    <Content Include="Content\js\scripts.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
@@ -1804,8 +1805,12 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Icons\icons8_home_50px_3.png" />
+    <Content Include="Icons\icons8_table_50px.png" />
+    <Content Include="Icons\icons8_total_sales_50px.png" />
+    <Content Include="Icons\icons8_user_24px.png" />
     <Content Include="Icons\logo.jpeg" />
-    <Content Include="Icons\User.png" />
+    <Content Include="Icons\question.png" />
     <Content Include="Models\WebForm1.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -2027,6 +2032,7 @@
     <Content Include="Views\GameImages\Details.cshtml" />
     <Content Include="Views\GameImages\Edit.cshtml" />
     <Content Include="Views\GameImages\Index.cshtml" />
+    <Content Include="Views\GameImages\PlayMemoryGame.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
