@@ -74,6 +74,8 @@ namespace Memoria.Models
 
         public System.Data.Entity.DbSet<Memoria.Models.GameImage> GameImages { get; set; }
 
+        public System.Data.Entity.DbSet<Memoria.Models.Evaluation> Evaluacions { get; set; }
+
         // public System.Data.Entity.DbSet<MemoryViewModels.Models.Memoria> Memorias { get; set; }
 
 

@@ -41,6 +41,7 @@ namespace Memoria.Controllers
         }
 
         // GET: GameImages/Create
+        [Authorize(Roles = "Maestro")]
         public ActionResult Create()
         {
             return View();
@@ -244,7 +245,6 @@ namespace Memoria.Controllers
         {
            
             return RedirectToAction("Index");
-            return File(memoryStream, "image/png");
         }
     }
 }

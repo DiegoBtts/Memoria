@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Memoria.Models.Evaluation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreAlumno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreMemoria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movimientos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tiempo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreAlumno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreMemoria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movimientos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tiempo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EvaluationId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EvaluationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EvaluationId })
+        </td>
+    </tr>
+}
+
+</table>
