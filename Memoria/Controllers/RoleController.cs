@@ -36,18 +36,18 @@ namespace Memoria.Controllers
             }
         }
         // GET: Role
-       [Authorize(Roles = "Administrador")]
+      // [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             List<RoleViewModel> list = new List<RoleViewModel>();
-            foreach (var role in RoleManager.Roles)
+           /* foreach (var role in RoleManager.Roles)
             {
                 list.Add(new RoleViewModel(role));
                 
-            }
+            }*/
             return View(list);
         }
-       [Authorize (Roles ="Administrador")]
+       //[Authorize (Roles ="Administrador")]
         public ActionResult Create()
         {
             return View();
