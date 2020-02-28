@@ -4,6 +4,7 @@ var aciertos=0;
 var EntrarBtn = 0;
 var primeraCarta = true;
 
+
 window.onload = iniciarJuego;
 
 function iniciarJuego(){
@@ -19,11 +20,13 @@ function iniciarJuego(){
       shuffle();
   } 
   
-  function flipCard(){// voltea cartas
+    function flipCard() {// voltea cartas
+        play('Clic');
     if(primeraCarta==true){
       console.log("Entro al if de carta")
       console.log(primeraCarta);
-      primeraCarta=false;
+      primeraCarta = false;
+        
       iniciar();
       
     }
@@ -57,18 +60,22 @@ function iniciarJuego(){
         
    }
 
-   function disableCards(){//desactivar carta
+    function disableCards() {//desactivar carta
+      play('Varita');
       console.log("entro al metodo disableCards")
       firstCard.removeEventListener('click',flipCard);
       secondCard.removeEventListener('click',flipCard);
       aciertos++;
       console.log("aciertos:"+aciertos)
-      resetBoard();
+       resetBoard();
+       
       winGame();
    }
   
-   function unflipCards(){//ocultar carta
+    function unflipCards() {//ocultar carta
+        play('Quack');
        console.log("entro al metodo unFlipCards")
+       
       lockBoard = true;  
         setTimeout(()=>{
                firstCard.classList.remove('flip');
@@ -145,30 +152,11 @@ pagina.appendChild(zonaDeJuego);
 iniciarJuego();
 }
 
-function btnApp(){
-  if(EntrarBtn <=0){
-    generarTablero('Apps');
-    EntrarBtn++;
-  }
-  
-  console.log("metodo para el boton App");
-  document.getElementById('todo1').style.display = 'none';
-  document.getElementById('todo').style.display = 'block';
-  document.getElementById('score').innerHTML = 0;
-  cont = 0;
-  aciertos =0;
-  console.log(cont);
+function play(name) {
+    var audio = document.getElementById(name);
+    audio.play();
 }
-function btnFrutas(){
-  
-  console.log("metodo para el boton frutas");
-  document.getElementById('todo').style.display = 'none';
-  document.getElementById('todo1').style.display = 'block';
-  document.getElementById('score').innerHTML = 0;
-  cont = 0;
-  aciertos =0;
-  console.log(cont);
-}
+ 
 function messg() {
     console.log("hOLA")
     Swal.fire({

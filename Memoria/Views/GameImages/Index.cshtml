@@ -1,37 +1,60 @@
 ﻿@model IEnumerable<Memoria.Models.GameImage>
-
+@using Microsoft.AspNet.Identity
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Juegos de Memoria</h2>
-
-<p>
-    @Html.ActionLink("Crear Juego", "Create")
-</p>
-
-<div class="row" >
+    @if (Request.IsAuthenticated)
+    {
+        if (User.IsInRole("Maestro"))
+        {
+            <p>
+               @Html.ActionLink("Crear Juego", "Create")
+            </p>
+        }
+    }
     
 
-    @foreach (var item in Model)
-    {
-        <div class="col-sm-3" style="margin:2%">
-            <div class="card text-center" style="width: 18rem;background-color:azure">
-                <img class="card-img-top" data-src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" data-holder-rendered="true" style="height: 150px; width: 100%; display: block;">
-                <div class="card-body">
-                    <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
+    <div class="row">
 
-                </div>
 
-                <div class="card-body text-left">
-                   
-                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IdImage}) |
-                    @Html.ActionLink("Jugar", "PlayMemoryGame", new { id = item.IdImage })
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-3" style="margin:2%">
+                <div class="card text-center" style="width: 18rem;background-color:azure;border: solid 2px blue;">
+                    <img class="card-img-top" data-src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" src="@Url.Action("getImagek","GameImages",new { id=item.IdImage, type="Portada"})" data-holder-rendered="true" style="height: 150px; width: 100%; display: block;">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
 
+                    </div>
+
+                    <div class="card-body text-left">
+
+
+                        @if (Request.IsAuthenticated)
+                        {
+                            if (User.IsInRole("Maestro"))
+                            {
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.IdImage });
+                                @Html.ActionLink("Jugar", "PlayMemoryGame", new { id = item.IdImage });
+                                @Html.ActionLink("Editar", "Edit", new { id = item.IdImage });
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Jugar", "PlayMemoryGame", new { id = item.IdImage });
+                            }
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Jugar", "PlayMemoryGame", new { id = item.IdImage });
+
+                        }
+
+                    </div>
                 </div>
             </div>
-        </div>
-        
-    }
 
-</div>
+        }
+
+    </div>

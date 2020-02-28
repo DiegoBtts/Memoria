@@ -41,6 +41,7 @@ namespace Memoria.Controllers
         }
 
         // GET: GameImages/Create
+        [Authorize(Roles = "Maestro")]
         public ActionResult Create()
         {
             return View();

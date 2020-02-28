@@ -65,7 +65,7 @@ namespace Memoria.Controllers
         }
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Role
-        [Authorize(Roles = "Administrador")]
+       [Authorize(Roles = "Administrador")]
         public ActionResult Index()
         {
             

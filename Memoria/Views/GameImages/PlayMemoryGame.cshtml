@@ -10,110 +10,182 @@
 @Scripts.Render("~/Content/js/sweetalert2@9.js")
 
     <div class="section-title">
-        <h2> @Html.DisplayFor(model => model.Name)</h2>
+        <h2 class="text-center"> @Html.DisplayFor(model => model.Name)</h2>
        
-        @Html.ActionLink("Volver al inicio", "Index")
-        <div>
+    <div style="margin-bottom:20px">
+        <div style="float:left">
+            <a class="site-btn btn-sm" href="@Url.Action("Index","GameImages")">Regresar al Menu</a>
+            <br />
+            <br />
             <button class="site-btn btn-sm" onclick="reiniciar()">Reiniciar</button>
         </div>
+        
+        <div style="float:right">
+            <p  >Movimientos:</p>
+            <div id="score" ></div>
+        </div >
 
-        <p>Movimientos:</p>
-        <div id="score"></div>
-
-        <p>Cronometro:</p>
-        <div class="cronometro">
-            <div id="hms"></div>
+        <div  style="float:right;margin-right:15px">
+            <p >Cronometro:</p>
+            <div class="cronometro">
+                <div id="hms"></div>
+            </div>
         </div>
+
+       
+    </div>
+
+       
 
         <section class="memory-game">
             <div class="memory-card" data-framework="Image1">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image1"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image1">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image1"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image2">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image2"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image2">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image2"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image3">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image3"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image3">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image3"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image4">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image4"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image4">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image4"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image5">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image5"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image5">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image5"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image6">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image6"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image6">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image6"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image7">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image7"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image7">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image7"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-framework="Image8">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image8"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-framework="Image8">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image8"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-name="Image9">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image9"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-name="Image9">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image9"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
             <div class="memory-card" data-name="Image0">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image0"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
             <div class="memory-card" data-name="Image0">
                 <img class="front-face" src="@Url.Action("getImagek","GameImages",new { id=Model.IdImage, type="Image0"})" alt="">
                 <img class="back-face" src="~/Icons/question.png" alt="?">
+                <audio id="Varita" src="~/Song/Varita.mp3"></audio>
+                <audio id="Clic" src="~/Song/Clic.mp3"></audio>
+                <audio id="Quack" src="~/Song/Quack.mp3"></audio>
             </div>
 
 
