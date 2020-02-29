@@ -1813,6 +1813,7 @@
     <Content Include="Icons\icons8_total_sales_50px.png" />
     <Content Include="Icons\icons8_user_24px.png" />
     <Content Include="Icons\logo.jpeg" />
+    <Content Include="Icons\logo.png" />
     <Content Include="Icons\nyan-cat.gif" />
     <Content Include="Icons\question.png" />
     <Content Include="Icons\trees.png" />
