@@ -104,9 +104,11 @@ function iniciarJuego(){
 
    }
   
-   function winGame(){
+    function winGame() {
+        
        if(aciertos==(cards.length/2)){
            //alert("Felicidades haz ganado")
+           play('WinGame');
            messg();
           parar();
        }
@@ -117,47 +119,25 @@ function iniciarJuego(){
    function reiniciar(){
        console.log("entro al metodo reiniciar");
        reiniciarCronometro();
-      // document.getElementById('recargar').reload(true);
-     location.reload(true);
-    
+       primeraCarta = true;
+       cont = 0;
+       aciertos = 0;
+       document.getElementById('score').innerHTML = "0";
+       shuffle();
    }
 
-   function generarTablero(images){
-    
-    var Apps = ['instagram', 'whatssap', 'messenger', 'facebook', 'apple', 'firefox', 'android', 'java', 'photos', 'drive'];
-    var zonaDeJuego = document.createElement('section'); //Se crea un div para ingresar el html dinámico
-    zonaDeJuego.id = "tablero";
 
-    var tablero = '<section class=\"memory-game\">'; //Inicio de la lista
- 
-
-   for(var i=1; i<=10; i++){
-     
-  
-        console.log('entro al if de apps');
-       tablero+= "<div class=\"memory-card\" data-framework=\""+Apps[i-1]+"\"><img class=\"front-face\" src=\"img/MemoriaJuego/"+Apps[i-1]+".png\"><img class=\"back-face\" src=\"img/MemoriaJuego/question.png\"></div>"; //Se concatenan cada uno de los hijos en la variable html
-        tablero+= "<div class=\"memory-card\" data-framework=\""+Apps[i-1]+"\"><img class=\"front-face\" src=\"img/MemoriaJuego/"+Apps[i-1]+".png\"><img class=\"back-face\" src=\"img/question.png\"></div>";  
-     
-    
-   }
-
- tablero+= '</section>'; //Fin de la lista
-
-zonaDeJuego.innerHTML = tablero; //Se agrega el html dinámico al div contenedor "padre"
-
-
-var pagina = document.getElementById('todo');
-pagina.appendChild(zonaDeJuego);
-//Se agrega el div contenedor "padre" al div contenedor "página"
-iniciarJuego();
-}
 
 function play(name) {
     var audio = document.getElementById(name);
     audio.play();
 }
+
+
+
  
 function messg() {
+   
     console.log("hOLA")
     Swal.fire({
         title: 'Haz Ganado.',
@@ -171,6 +151,9 @@ function messg() {
     no-repeat
   `
     })
+    reiniciar();
+
+    
 }
 
  

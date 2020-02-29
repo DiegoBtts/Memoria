@@ -86,7 +86,7 @@ namespace Memoria.Controllers
 
             return View(list);
         }
-        [Authorize(Roles = "Administrador")]
+      [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<SelectListItem> list = new List<SelectListItem>();
